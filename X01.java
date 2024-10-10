@@ -7,12 +7,11 @@ public class X01 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        double price, small;
-        double total, total1;
+        double total, total1, price, small;
 
         small = 999.99;
         total = 0;
-        price = input.nextDouble();
+        price = Double.parseDouble(input.nextLine());
         while (price != 0) {
             if (price < small) {
                 small = price;
@@ -21,13 +20,17 @@ public class X01 {
                 price = price;
                 total = total + price;
             }
-            price = input.nextDouble();
+            price = Double.parseDouble(input.nextLine());
         }
         if (total >= 100.0) {
             total1 = total - small;
         } else {
             total1 = total;
         }
-        System.out.println(ToFixed(total1, 2));
+        System.out.println(toFixed(total1,2));
+    }
+    
+    private static String toFixed(double value, int digits) {
+        return String.format("%." + digits + "f", value);
     }
 }
