@@ -28,6 +28,6 @@ public class X01 {
         } else {
             total1 = total;
         }
-        System.out.println(Toxifed(total1, 2));
+        System.out.println(ToFixed(total1, 2));
     }
 }
