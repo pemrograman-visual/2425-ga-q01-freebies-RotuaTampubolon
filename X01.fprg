@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="X01"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-09 03:34:09 PM"/>
+        <attribute name="created" value="VXNlcjtMQVBUT1AtSkoySDVLTjk7MjAyNC0xMC0wOTswMzoxMDozMyBQTTsyNzI5"/>
+        <attribute name="edited" value="VXNlcjtMQVBUT1AtSkoySDVLTjk7MjAyNC0xMC0wOTswMzozNDowOSBQTTs1OzI4NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="price, small" type="Real" array="False" size=""/>
+            <declare name="total, total1" type="Real" array="False" size=""/>
+            <assign variable="small" expression="999.99"/>
+            <assign variable="total" expression="0"/>
+            <input variable="price"/>
+            <while expression="price!=0">
+                <if expression="price&lt;small">
+                    <then>
+                        <assign variable="small" expression="price"/>
+                        <assign variable="total" expression="total+small"/>
+                    </then>
+                    <else>
+                        <assign variable="price" expression="price"/>
+                        <assign variable="total" expression="total+price"/>
+                    </else>
+                </if>
+                <input variable="price"/>
+            </while>
+            <if expression="total&gt;=100.00">
+                <then>
+                    <assign variable="total1" expression="total-small"/>
+                </then>
+                <else>
+                    <assign variable="total1" expression="total"/>
+                </else>
+            </if>
+            <output expression="Toxifed(total1,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
